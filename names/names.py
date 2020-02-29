@@ -1,4 +1,5 @@
 import time
+from binary_search_tree import BinarySearchTree
 
 start_time = time.time()
 
@@ -14,10 +15,16 @@ duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
 # Original nested for loop had a run time of O(n^2)
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
+nametree = BinarySearchTree('Hec')
+for name in names_1:
+    nametree.insert(name)
+for name in names_2:
+    if nametree.contains(name):
+        duplicates.append(name)
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
