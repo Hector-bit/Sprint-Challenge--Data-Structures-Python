@@ -13,6 +13,7 @@ f.close()
 duplicates = []  # Return the list of duplicates in this data structure
 
 # Replace the nested for loops below with your improvements
+# Original nested for loop had a run time of O(n^2)
 for name_1 in names_1:
     for name_2 in names_2:
         if name_1 == name_2:
